@@ -6,25 +6,34 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  
   <video autoplay muted loop id="bgVideo">
     <source src="Background2.mp4" type="video/mp4">
   </video>
-  <h2 class="title">To-Do List</h2>
-  <p class="clock-label">Waktu Sekarang: <span id="clock"></span></p>
-  
   <div class="overlay"></div>
+  <h2 class="title">📑Commission List</h2>
+  <p class="clock-label">💎Waktu Sekarang: <span id="clock"></span></p>
   <div class="task-container">
-    <input id="taskInput" placeholder="Tambah tugas..." />
+    <input id="taskInput" placeholder="Commission..." />
+    <input id="clientInput" placeholder="Client..."/>
+    <input 
+          placeholder="Deadline"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+          id="deadlineInput"/>
     <button onclick="addTask()">Tambah</button>
 
-    <ul id="taskList"></ul>
+    <ul id="taskList" onclick="sortListItems()"></ul>
 
     <div id="statusMessage"></div>
 
-    <div class="action-buttons" id="action-buttons" style="display: none;">
-        <button onclick="markAllDone()">Selesai semua</button>
-        <button onclick="markAllDelete()">Batal semua</button>
-        <button onclick="deleteAll()">Hapus semua</button>
+  </div>
+  <div class="option">
+    <div id="action-buttons" style="display: none;">
+      <button onclick="markAllDone()">Selesai semua</button>
+      <button onclick="markAllDelete()">Batal semua</button>
+      <button onclick="deleteAll()">Hapus semua</button>
     </div>
   </div>
 

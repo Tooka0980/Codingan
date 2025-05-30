@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/SugarFruit.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -8,6 +16,7 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
+    font-family: 'MyCustomFont';
 }
 
 input, button {
@@ -39,7 +48,7 @@ button {
 }
 
 button:hover {
-    background-color: #9f9f9f;
+    background-color: #afa9f0;
     transform: scale(1.05);
     box-shadow: 0 0 10px #9f95f7;
 }
@@ -55,15 +64,35 @@ button:hover {
     display: flex;
     margin-top: 15px;
     flex-direction: column;
-    align-items: center;
+    font-family: 'MyCustomFont';
+    
+}
+
+.option {
+    position : relative;
+    z-index: 1;
+    background-color: #1B1A55;
+    padding: 15px;
+    border-radius: 22px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+    font-family: 'MyCustomFont';
 }
 
 .action-buttons {
-    display: flex;
-    min-width: 120px;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 10px;
+    border : none;
+    padding : 10px;
+    margin-top: 20px;
+}
+
+.action-buttons[style*="display: flex"] {
+    border : 2px solid #7A73D1;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #customConfirm {
@@ -93,12 +122,25 @@ button:hover {
 }
 
 .title {
-    color: #7A73D1;
+    color: #867cdd;
+    background-color: #1B1A55;
+    padding: 15px;
+    border-radius: 22px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 #clock {
   color: #7A73D1;
   font-weight: bold;
+    background-color: #1B1A55;
+    padding: 15px;
+    border-radius: 22px;
+}
+
+.clock-label {
+    background-color: #1B1A55;
+    padding: 15px;
+    border-radius: 22px;
 }
 
 p {
@@ -123,5 +165,5 @@ p {
     width: 100%;
     height: 100%;
     background: rgba(7, 15, 43, 0.6);
-    z-index: 0;
+    z-index: -1;
 }
